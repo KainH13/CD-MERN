@@ -15,7 +15,7 @@ const PersonCard = (props) => {
         <h1>{ lastName }, { firstName }</h1>
         <p>Age: { currentAge }</p>
         <p>Hair Color: { hairColor }</p>
-        <Button variant="outline-primary" onClick={ addAge }>Birthday!</Button>
+        <Button variant="outline-primary" className="col-4" onClick={ addAge }>Birthday!</Button>
       </Card>
     );
 }
