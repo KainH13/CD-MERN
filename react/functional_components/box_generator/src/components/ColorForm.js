@@ -5,11 +5,15 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 const ColorForm = (props) => {
+  const {blocks, setBlocks} = props;
   const [color, setColor] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.newBlock( color )
+    setBlocks([
+      ...blocks,
+      color
+    ])
   };
 
   return (
