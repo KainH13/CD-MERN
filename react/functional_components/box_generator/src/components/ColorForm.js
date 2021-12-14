@@ -14,6 +14,7 @@ const ColorForm = (props) => {
       ...blocks,
       color
     ])
+    setColor("")
   };
 
   return (
@@ -21,7 +22,7 @@ const ColorForm = (props) => {
       <Form.Group className="mb-3 row align-items-center" controlId="color">
         <Form.Label className="col-sm-3">Color:</Form.Label>
         <div className="col-sm-9">
-          <Form.Control type="text" onChange={ (e) => setColor(e.target.value) }/>
+          <Form.Control type="text" onChange={ (e) => setColor(e.target.value) } value={ color }/>
         </div>
       </Form.Group>
       <Button className="col-sm-11 offset-sm-1" variant="primary" type="submit">
