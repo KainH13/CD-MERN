@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './App.css';
 
 import CreateTodo from "./components/CreateTodo";
 import ViewTodos from "./components/ViewTodos";
@@ -19,11 +20,11 @@ function App() {
       <CreateTodo todos={todos} setTodos={setTodos} completed={completed} />
       <ViewTodos
         todos={todos}
+        setTodos={setTodos}
         deleteTodoById={deleteTodoById}
         completed={completed}
         setCompleted={setCompleted}
       />
-      {console.log(todos)}
     </div>
   );
 }
