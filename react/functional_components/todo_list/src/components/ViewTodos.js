@@ -2,7 +2,7 @@ import React from "react";
 import { NavItem } from "react-bootstrap";
 
 const ViewTodos = (props) => {
-  const { todos, setTodos, deleteTodoById, completed, setCompleted } = props;
+  const { todos, setTodos, deleteTodoById } = props;
 
   const handleCompleted = (todo) => {
     todo.completed = !todo.completed;
