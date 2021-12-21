@@ -14,6 +14,9 @@ function App() {
         console.log(response.data);
         setPokemon(response.data.results);
       })
+      .catch(err=>{
+        console.log(err);
+      })
   }, []);
 
   return (
