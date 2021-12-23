@@ -6,7 +6,7 @@ cd [your-project-name-here]
 
 # add packages needed for full stack
 npm install axios
-npm install @reach/router
+npm install @reach/router --legacy-peer-deps
 
 # add react-bootstrap
 npm install react-bootstrap bootstrap@5.1.3
