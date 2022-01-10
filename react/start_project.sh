@@ -20,3 +20,17 @@ npm start
 
 # Express Back End
 npm install express
+
+# MongoDB
+# start server
+brew services start mongodb-community@4.4
+
+# to run shell
+mongo
+
+# to stop server
+brew services stop mongodb-community@4.4
+
+# shutting dwon if mongod window got closed
+ps -ax | grep mongo
+sudo kill *process_id*
