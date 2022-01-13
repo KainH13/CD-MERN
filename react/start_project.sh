@@ -21,6 +21,12 @@ npm start
 # Express Back End
 npm install express
 
+# Setting up backend
+mkdir server
+cd server
+mkdir config controllers models routes
+touch server.js
+
 # MongoDB
 # start server
 brew services start mongodb-community@4.4
