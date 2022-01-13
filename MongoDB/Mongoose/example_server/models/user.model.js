@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Age is required."]
   }
-});
+}, { timestamps: true });
 
 const User = mongoose.model('User', UserSchema);
 
