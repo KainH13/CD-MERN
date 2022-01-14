@@ -1,4 +1,4 @@
-# React Front End
+# React Client
 
 # in directory where you wish the project folder to live
 npx create-react-app [your-project-name-here]
@@ -18,14 +18,17 @@ cd [your-project-name-here]
 npm start
 
 
-# Express Back End
-npm install express
+# Express / Mongo Server
 
-# Setting up backend
+# setup
 mkdir server
 cd server
 mkdir config controllers models routes
 touch server.js
+npm init -y
+
+# installing packages
+npm install mongoose express
 
 # MongoDB
 # start server

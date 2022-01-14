@@ -6,8 +6,7 @@ require("./config/mongoose.config");
 
 app.use(express.json(), express.urlencoded({ extended: true }));
 
-const AllMyUserRoutes = require("./routes/user.routes");
-AllMyUserRoutes(app);
+require("./routes/jokes.routes")(app);
 
 app.listen(port, () =>
     console.log(`The server is all fired up on port ${port}`)
