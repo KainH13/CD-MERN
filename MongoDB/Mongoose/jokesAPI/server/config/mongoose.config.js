@@ -9,5 +9,5 @@ mongoose
     })
     .then(() => console.log(`Established a connection to the database: ${db}`))
     .catch((err) =>
-        console.log("Something went wrong when connecting to the database", err)
+        console.log(`Something went wrong when connecting to ${db}`, err)
     );

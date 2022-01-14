@@ -4,19 +4,23 @@ module.exports = {
     findAllJokes: (req, res) => {
         Joke.find()
             .then((allJokes) => {
-                res.json({ jokes: allJokes });
+                console.log(allJokes);
+                res.json(allJokes);
             })
             .catch((err) => {
+                console.log("Find All failed");
                 res.json({ message: "Something went wrong", error: err });
             });
     },
 
-    findSingleJoke: (req, res) => {
+    findOneJoke: (req, res) => {
         Joke.findOne({ _id: req.params.id })
-            .then((joke) => {
-                res.json({ joke: joke });
+            .then((oneJoke) => {
+                console.log(oneJoke);
+                res.json(oneJoke);
             })
             .catch((err) => {
+                console.log("Find One failed");
                 res.json({ message: "Something went wrong", error: err });
             });
     },
@@ -24,9 +28,11 @@ module.exports = {
     createJoke: (req, res) => {
         Joke.create(req.body)
             .then((newlyCreatedJoke) => {
-                res.json({ joke: newlyCreatedJoke });
+                console.log(newlyCreatedJoke);
+                res.json(newlyCreatedJoke);
             })
             .catch((err) => {
+                console.log("Create failed");
                 res.json({ message: "Something went wrong", error: err });
             });
     },
@@ -37,9 +43,11 @@ module.exports = {
             runValidators: true,
         })
             .then((updatedJoke) => {
-                res.json({ joke: updatedJoke });
+                console.log(updatedJoke);
+                res.json(updatedJoke);
             })
             .catch((err) => {
+                console.log("Update failed");
                 res.json({ message: "Something went wrong", error: err });
             });
     },
@@ -47,9 +55,11 @@ module.exports = {
     deleteJoke: (req, res) => {
         Joke.deleteOne({ _id: req.params.id })
             .then((result) => {
-                res.json({ result: result });
+                console.log(result);
+                res.json(result);
             })
             .catch((err) => {
+                console.log("Delete failed");
                 res.json({ message: "Something went wrong", error: err });
             });
     },
