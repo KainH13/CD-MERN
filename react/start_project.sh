@@ -34,7 +34,7 @@ touch server.js
 npm init -y
 
 # installing packages
-npm install mongoose express
+npm install mongoose express cors
 
 
 # MongoDB
