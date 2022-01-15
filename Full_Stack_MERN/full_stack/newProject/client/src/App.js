@@ -1,11 +1,15 @@
 import React from "react";
-import PersonForm from "./components/PersonForm";
+import { Router } from "@reach/router";
 
+// views
+import Main from "./views/Main";
 
 function App() {
     return (
         <div className="App">
-            <PersonForm />
+            <Router>
+                <Main path="/home" />
+            </Router>
         </div>
     );
 }

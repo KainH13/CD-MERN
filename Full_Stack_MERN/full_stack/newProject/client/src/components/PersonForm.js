@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const PersonForm = () => {
+const PersonForm = (props) => {
+    const { people, setPeople } = props;
+
     // use state to track form input values
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -18,10 +20,14 @@ const PersonForm = () => {
             })
             .then((res) => {
                 console.log(res);
-
                 console.log(res.data);
+                // set people object so that additions are displayed in PersonList
+                setPeople([...people, res.data]);
             })
             .catch((err) => console.log(err));
+
+        setFirstName("");
+        setLastName("");
     };
 
     return (
@@ -31,6 +37,7 @@ const PersonForm = () => {
                 <br />
                 <input
                     type="text"
+                    value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                 />
             </p>
@@ -39,6 +46,7 @@ const PersonForm = () => {
                 <br />
                 <input
                     type="text"
+                    value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                 />
             </p>
