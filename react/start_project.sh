@@ -1,3 +1,10 @@
+# Project Setup
+mkdir newProject
+cd newProject
+git init
+echo node_modules/ > .gitignore
+mkdir server client
+
 # React Client
 
 # in directory where you wish the project folder to live
@@ -21,7 +28,6 @@ npm start
 # Express / Mongo Server
 
 # setup
-mkdir server
 cd server
 mkdir config controllers models routes
 touch server.js
@@ -40,6 +46,6 @@ mongo
 # to stop server
 brew services stop mongodb-community@4.4
 
-# shutting dwon if mongod window got closed
+# shutting down if mongod window got closed
 ps -ax | grep mongo
 sudo kill *process_id*
