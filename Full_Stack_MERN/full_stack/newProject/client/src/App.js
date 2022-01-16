@@ -4,11 +4,15 @@ import { Router } from "@reach/router";
 // views
 import Main from "./views/Main";
 
+// components
+import Detail from "./components/Detail";
+
 function App() {
     return (
         <div className="App">
             <Router>
-                <Main path="/home" />
+                <Main path="/people" />
+                <Detail path="/people/:id" />
             </Router>
         </div>
     );
