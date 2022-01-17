@@ -36,4 +36,16 @@ module.exports = {
                 response.json(err);
             });
     },
+
+    updatePerson: (request, response) => {
+        Person.findOneAndUpdate({ _id: request.params.id }, request.body, {
+            new: true,
+        })
+            .then((updatedPerson) => {
+                response.json(updatedPerson);
+            })
+            .catch((err) => {
+                response.json(err);
+            });
+    },
 };
