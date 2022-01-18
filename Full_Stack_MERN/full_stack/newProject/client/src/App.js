@@ -3,6 +3,7 @@ import { Router } from "@reach/router";
 
 // views
 import Main from "./views/Main";
+import Update from "./components/Update";
 
 // components
 import Detail from "./components/Detail";
@@ -13,6 +14,7 @@ function App() {
             <Router>
                 <Main path="/people" />
                 <Detail path="/people/:id" />
+                <Update path="people/edit/:id" />
             </Router>
         </div>
     );

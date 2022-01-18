@@ -48,4 +48,10 @@ module.exports = {
                 response.json(err);
             });
     },
+
+    deletePerson: (request, response) => {
+        Person.deleteOne({ _id: request.params.id })
+            .then((deleteConfirmation) => response.json(deleteConfirmation))
+            .catch((err) => response.json(err));
+    },
 };
