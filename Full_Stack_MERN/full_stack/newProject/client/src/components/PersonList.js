@@ -3,11 +3,7 @@ import React, { useEffect } from "react";
 import { Link } from "@reach/router";
 
 const PersonList = (props) => {
-    const { people, setPeople } = props;
-
-    const removeFromDom = (personID) => {
-        setPeople(people.filter((person) => person._id !== personID));
-    };
+    const { people, removeFromDom } = props;
 
     const deletePerson = (personID) => {
         axios
@@ -17,18 +13,6 @@ const PersonList = (props) => {
             })
             .catch((err) => console.log(err));
     };
-
-    useEffect(() => {
-        axios
-            .get("http://localhost:8000/api/people")
-            .then((res) => {
-                console.log(res.data);
-                setPeople(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
 
     return (
         <div>

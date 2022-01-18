@@ -1,15 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+// components
 import PersonForm from "../components/PersonForm";
 import PersonList from "../components/PersonList";
 
 const Main = (props) => {
     const [people, setPeople] = useState([]);
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:8000/api/people")
+            .then((res) => {
+                setPeople(res.data);
+                setLoaded(true);
+            })
+            .catch((err) => console.log(err));
+    }, []);
+
+    const removeFromDom = (personID) => {
+        setPeople(people.filter((person) => person._id !== personID));
+    };
+
+    const createPerson = (person) => {
+        axios
+            .post("http://localhost:8000/api/people", person)
+            .then((res) => {
+                setPeople([...people, res.data]);
+            })
+            .catch((err) => console.log(err));
+    };
 
     return (
         <div>
-            <PersonForm people={people} setPeople={setPeople} />
+            <PersonForm
+                onSubmitProp={createPerson}
+                initialFirstName=""
+                initialLastName=""
+            />
             <hr />
-            <PersonList people={people} setPeople={setPeople} />
+            {loaded && (
+                <PersonList people={people} removeFromDom={removeFromDom} />
+            )}
         </div>
     );
 };

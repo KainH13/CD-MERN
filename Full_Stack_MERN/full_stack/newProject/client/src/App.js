@@ -3,7 +3,7 @@ import { Router } from "@reach/router";
 
 // views
 import Main from "./views/Main";
-import Update from "./components/Update";
+import Update from "./views/Update";
 
 // components
 import Detail from "./components/Detail";
