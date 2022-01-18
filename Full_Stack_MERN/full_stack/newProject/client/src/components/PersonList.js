@@ -6,7 +6,7 @@ const PersonList = (props) => {
     const { people, setPeople } = props;
 
     const removeFromDom = (personID) => {
-        setPeople(people.filter((person) => person._id != personID));
+        setPeople(people.filter((person) => person._id !== personID));
     };
 
     const deletePerson = (personID) => {
