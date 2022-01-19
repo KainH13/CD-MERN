@@ -4,6 +4,7 @@ import { navigate } from "@reach/router";
 
 // components
 import PersonForm from "../components/PersonForm";
+import DeleteButton from "../components/DeleteButton";
 
 const Update = (props) => {
     const { id } = props;
@@ -36,11 +37,17 @@ const Update = (props) => {
         <div>
             <h1>Update a Person</h1>
             {loaded && (
-                <PersonForm
-                    onSubmitProp={updatePerson}
-                    initialFirstName={person.firstName}
-                    initialLastName={person.lastName}
-                />
+                <div>
+                    <PersonForm
+                        onSubmitProp={updatePerson}
+                        initialFirstName={person.firstName}
+                        initialLastName={person.lastName}
+                    />
+                    <DeleteButton
+                        personID={person._id}
+                        successCallback={() => navigate("/people")}
+                    />
+                </div>
             )}
         </div>
     );

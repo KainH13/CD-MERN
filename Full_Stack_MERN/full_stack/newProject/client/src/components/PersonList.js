@@ -1,18 +1,12 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { Link } from "@reach/router";
+import axios from "axios";
+
+// components
+import DeleteButton from "./DeleteButton";
 
 const PersonList = (props) => {
     const { people, removeFromDom } = props;
-
-    const deletePerson = (personID) => {
-        axios
-            .delete(`http://localhost:8000/api/people/${personID}`)
-            .then((res) => {
-                removeFromDom(personID);
-            })
-            .catch((err) => console.log(err));
-    };
 
     return (
         <div>
@@ -26,13 +20,11 @@ const PersonList = (props) => {
                         </Link>
                         <br />
                         <Link to={`/people/edit/${person._id}`}>Edit</Link>
-                        <button
-                            onClick={(e) => {
-                                deletePerson(person._id);
-                            }}
-                        >
-                            Delete
-                        </button>
+                        <br />
+                        <DeleteButton
+                            personID={person._id}
+                            successCallback={() => removeFromDom(person._id)}
+                        />
                     </div>
                 );
             })}
