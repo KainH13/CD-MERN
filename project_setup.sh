@@ -3,7 +3,7 @@ mkdir newProject
 cd newProject
 git init
 echo node_modules/ > .gitignore
-mkdir server client
+mkdir server
 
 # React Client
 
