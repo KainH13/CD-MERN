@@ -35,6 +35,14 @@ npm init -y
 # installing packages
 npm install mongoose express cors
 
+# for user authentication
+npm i bcrypt
+npm install jsonwebtoken
+npm install cookie-parser
+
+# for secure environmental variable storage
+npm install dotenv
+
 # start server
 nodemon server.js
 
