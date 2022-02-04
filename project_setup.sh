@@ -20,6 +20,9 @@ npm install @reach/router --legacy-peer-deps
 # add react-bootstrap
 npm install react-bootstrap bootstrap@5.1.3
 
+# socket.io
+npm install socket.io-client
+
 # start local development server
 npm start
 
@@ -42,6 +45,9 @@ npm install cookie-parser
 
 # for secure environmental variable storage
 npm install dotenv
+
+# socket.io
+npm install socket.io
 
 # start server
 nodemon server.js
