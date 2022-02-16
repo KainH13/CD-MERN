@@ -15,6 +15,10 @@ cd client
 
 # add packages needed for full stack
 npm install axios
+
+# routing
+npm install react-router-dom
+# or legacy routing
 npm install @reach/router --legacy-peer-deps
 
 # add react-bootstrap
